@@ -16,6 +16,13 @@ import java.sql.SQLException;
  * Created by svindler on 10.01.2017.
  */
 
+/**
+ * This class is the controller for the API.
+ *
+ * @author doramedgyasszay
+ * @version beta
+ */
+
 public class BannerController {
 
     private final Service service;
@@ -25,6 +32,12 @@ public class BannerController {
     public BannerController(Service service){
         this.service = service;
     }
+
+    /**
+     * @param request basic spark request
+     * @param response basic spark response
+     * @return a JSONObject
+     */
 
     public JSONObject getBanner(Request request, Response response){
 
@@ -58,6 +71,14 @@ public class BannerController {
         return jsonObject;
 
     }
+
+    /** Method to check if the API key provided in the request exists in the database
+     *
+     * @param jsonStr JSON object in a string form
+     * @return true if the api key exists and false if it doesn't
+     * @throws JSONException if the string arg not in the right format to convert it into a JSON object
+     * @see BannerController
+     */
 
     public boolean checkClientAPIKEY(String jsonStr) throws JSONException {
         JSONObject jsonObject = new JSONObject(jsonStr);

@@ -14,11 +14,27 @@ import static spark.Spark.*;
  * Created by svindler on 10.01.2017.
  */
 
+/**
+ * <h1>Banner Service</h1>
+ * <h2>By Kicsikacsák</h2>
+ * This class is responsible for running the server for the service
+ *
+ * @author doramedgyasszay
+ * @version beta
+ * @see BannerService
+ * @see BannerController
+ */
+
 public class BannerService {
 
     private BannerController controller;
     private static final Logger logger = LoggerFactory.getLogger(BannerService.class);
 
+    /**
+     * This method is responsible for setting the port, the endpoints, and for Exception handling
+     *
+     * @param args
+      */
 
     public static void main(String[] args) {
         logger.debug("Starting " + BannerService.class.getName() + "...");
